@@ -13,7 +13,7 @@
                         </div>
                         <div class="body">
                             
-							 <form method="post" enctype="multipart/form-data" action="" enctype="multipart/form-data" >
+							 <form method="post" enctype="multipart/form-data" action="" >
 								<div class="row clearfix">
                                 <div class="col-sm-12">
                                     <div class="form-group">

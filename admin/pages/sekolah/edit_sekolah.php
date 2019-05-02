@@ -46,10 +46,10 @@
                                             <select class="form-control show-tick" name="id_kecamatan" required>
                                                 <option value="">-- Pilih Kecamatan --</option>
                                                 <?php
-                                                    $sql=mysqli_query($GLOBALS["___mysqli_ston"], "SELECT * from tb_kecamatan");
+                                                    $sql=mysqli_query($GLOBALS["___mysqli_ston"], "SELECT * from lokasi_lahan");
                                                     while($data=mysqli_fetch_array($sql)){                   
                                                 ?>
-                                                <option value="<?php echo $data['id_kecamatan'];?>"><?php echo $data['nama_kecamatan'];?></option>
+                                                <option value="<?php echo $data['id'];?>"><?php echo $data['nama_lokasi'];?></option>
                                                     <?php } ?>
                                             </select>
                                         </div>

@@ -105,6 +105,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="?pages=pesan">
+                            <i class="material-icons">view_module</i>
+                            <span>Kelola Pesan</span>
+                        </a>
+                    </li>
+                    <li>
                     <a href="logout.php" onclick="return confirm('anda yakin akan keluar?')" >
                             <i class="material-icons">input</i>
                             <span>Logout</span>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Home 2</title>
+        <title>Sistem Informasi Geografis</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -222,7 +222,7 @@ var map;
 		<!-- slider-area start -->
 		<div id="slider" class="slider-area">
 				<div class="single-slide">
-					<a href="#"><img src="img/home-2/slider/1.png" alt="Slide Image" /></a>
+					<a href="#"><img src="img/home-2/slider/banner.png" alt="Slide Image" /></a>
 					<div class="slide-text-container text-center">
 					</div>
 				</div><!-- /.single-slide -->

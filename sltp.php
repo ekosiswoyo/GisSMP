@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Home 2</title>
+        <title>Sistem Informasi Geografis</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -288,10 +288,11 @@ var map;
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3">
+						<div class="col-md-3">
 							<div class="logo">
-								<!-- <a href="index-2.html"><img src="img/logo/logo.png" alt="Logo" /></a> -->
-								<h1>LOGO</h1>
+								<a href="index.php"><img src="img/logo/logo.png" alt="Logo" style="width:87px;height:39px;"/></a>
 							</div>
+						</div>
 						</div>
 						<div class="col-md-9">
 							<div class="main-menu">
@@ -354,7 +355,7 @@ var map;
 		<!-- slider-area start -->
 		<div id="slider" class="slider-area">
 				<div class="single-slide">
-					<a href="#"><img src="img/home-2/slider/1.png" alt="Slide Image" /></a>
+					<a href="#"><img src="img/home-2/slider/banner.png" alt="Slide Image" /></a>
 					<div class="slide-text-container text-center">
 					</div>
 				</div><!-- /.single-slide -->

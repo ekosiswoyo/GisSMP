@@ -1,15 +1,33 @@
+
 <?php
 include 'config.php';
-  $cari = mysqli_query($GLOBALS["___mysqli_ston"], "select * from profil where id=1");
-  $dcari = mysqli_fetch_array($cari);
+if(isset($_POST['submit'])){
+
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$message = $_POST['message'];
+
+
+$masuk = mysqli_query($GLOBALS["___mysqli_ston"], "insert into tb_pesan(name,email,message)values('$name','$email', '$message')");
+if($masuk){
+   echo"<script>window.alert('Simpan Berhasil..!')</script>";
+   echo"<script>document.location='index.php';</script>"; 
+}else{
+   echo"<script>window.alert('Simpan Gagal..!')</script>";
+    echo"<script>document.location='contact.php';</script>";
+}														
+	
+
+
+
+}
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="">
-    <head>
+<head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Contact Us</title>
-        <meta name="description" content="">
+        <title>Sistem Informasi Geografis</title><meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- favicon
@@ -51,12 +69,7 @@ include 'config.php';
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body class="blog-col-1">
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- header-area start -->
-		<header id="header" class="header-area">
+    <header id="header" class="header-area">
 			<div class="header-top">
 				<div class="container">
 					<div class="row">
@@ -83,10 +96,11 @@ include 'config.php';
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3">
+						<div class="col-md-3">
 							<div class="logo">
-								<!-- <a href="index-2.html"><img src="img/logo/logo.png" alt="Logo" /></a> -->
-								<h1>LOGO</h1>
+								<a href="index.php"><img src="img/logo/logo.png" alt="Logo" style="width:87px;height:39px;"/></a>
 							</div>
+						</div>
 						</div>
 						<div class="col-md-9">
 							<div class="main-menu">
@@ -128,8 +142,7 @@ include 'config.php';
 		</header><!-- /.header-bottom -->
         <!-- header-area end -->
         
-		<!-- search-area start -->
-		<div class="search-area">
+    <div class="search-area">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -144,10 +157,7 @@ include 'config.php';
 				</div>
 			</div>
 		</div>
-		<!-- search-area end -->
-		
-		<!-- heading-area start -->
-		<div id="contact-heading" class="heading-area">
+    <div id="contact-heading" class="heading-area">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -156,22 +166,38 @@ include 'config.php';
 				</div>
 			</div>
 		</div>
-		<!-- heading-area end -->
-		
-		<!-- contact-content-area start -->
-		<div id="contact-content" class="contact-content-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="contact-img">
-							<img src="img/contact/contact.jpg" alt="" />
-						</div>
-						
-					</div>
-				</div>
-				<div class="row">
-					
-					<div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2">
+    <div id="contact-content" class="contact-content-area">
+		<div class="container">
+        <div class="row">
+					<div class="col-md-6 col-md-offset-0 col-sm-12">
+							<div class="contact-form-area">
+								
+								
+        <form action="" method="post">
+								<div class="input-fields fix">
+									<div class="single-field">
+										<input type="text" placeholder="Name" class="name" name="name" required/>
+									</div>
+									<div class="single-field">
+										<input type="email" placeholder="Email" class="name" name="email" required/>
+									</div>
+								</div>
+								<div class="message-field">
+									<textarea placeholder="Message" name="message" required></textarea>
+								</div>
+								<div class="submit-btn clear">
+									<button type="submit" name="submit" >send message</button>
+								</div>
+							</form>
+							</div>
+                    </div>
+                    <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2">
+					<?php
+
+					$cari = mysqli_query($GLOBALS["___mysqli_ston"], "select * from profil where id='1'");
+					$dcari = mysqli_fetch_array($cari);
+
+					?>
 						<div class="contact-address">
 							<p>Alamat:  <?php echo $dcari['alamat'];?></p>
 							<p>Telp:   <?php echo $dcari['telp'];?></p>
@@ -187,21 +213,19 @@ include 'config.php';
 							</p>
 						</div>
 					</div>
+					
 				</div>
-			</div>
+				
 		</div>
-		<!-- contact-content-area end -->
-		
-		<!-- footer-area start -->
-		<footer id="footer" class="footer-area text-center">
+    </div>
+    <footer id="footer" class="footer-area text-center">
 			<div class="footer-logo">
 				<!-- <a href="#"><img src="img/logo/footer-logo.png" alt="Footer Logo" /></a> -->
 			</div>
 			<!-- <p class="copyright-text">&copy; Copyright© 2015 Blogging. All right reserved.</p> -->
-		</footer>
-		<!-- footer-area end -->
-		
-		<!-- jquery
+        </footer>
+        
+        <!-- jquery
 		============================================ -->		
         <script src="js/vendor/jquery-1.11.3.min.js"></script>
 		<!-- bootstrap JS

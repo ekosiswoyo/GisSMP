@@ -1,6 +1,6 @@
 <?php
   $id = $_GET['id'];
-  $cari = mysqli_query($GLOBALS["___mysqli_ston"], "select * from tb_sekolah a, tb_kecamatan b where a.id_kecamatan=b.id_kecamatan and id_sekolah=$id");
+  $cari = mysqli_query($GLOBALS["___mysqli_ston"], "select * from tb_sekolah a, lokasi_lahan b where a.id_kecamatan=b.id and id_sekolah=$id");
   $dcari = mysqli_fetch_array($cari);
 ?>
 <section class="content">
@@ -12,7 +12,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Tambah data tb_sekolah
+                                Tambah data SLTP
                             </h2>
                             
                         </div>
@@ -23,49 +23,49 @@
                                 <br>
                                 <div class="col-sm-6">
                                     <div class="form-group">
+                                    <label>Nama Sekolah</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Nama Sekolah" name="nama_sekolah"  value="<?php echo $dcari['nama_sekolah']; ?>" readonly />
                                         </div>
                                     </div>
                                     
 									<div class="form-group">
+                                    <label>Status</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Status" name="status"  value="<?php echo $dcari['status']; ?>" readonly />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
+                                    <label>Kelurahan</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Kelurahan" name="kelurahan"   value="<?php echo $dcari['kelurahan']; ?>" readonly />
                                         </div>
                                     </div>
 
-                                    <div class="input-group">
-                                        <div class="col-sm-12">
-                                            <select class="form-control show-tick" name="id_kecamatan" readonly>
-                                                <option value="">-- Pilih Kecamatan --</option>
-                                                <?php
-                                                    $sql=mysqli_query($GLOBALS["___mysqli_ston"], "SELECT * from tb_kecamatan");
-                                                    while($data=mysqli_fetch_array($sql)){                   
-                                                ?>
-                                                <option value="<?php echo $data['nama_kecamatan'];?>"><?php echo $data['nama_kecamatan'];?></option>
-                                                    <?php } ?>
-                                            </select>
+                                    <div class="form-group">
+                                    <label>Kecamatan</label>
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" placeholder="Kota" name="kota"   value="<?php echo $dcari['nama_lokasi']; ?>" readonly />
                                         </div>
                                     </div>
+
                                     <div class="form-group">
+                                    <label>Kota</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Kota" name="kota"   value="<?php echo $dcari['kota']; ?>" readonly />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
+                                    <label>Provinsi</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Provinsi" name="provinsi"  value="<?php echo $dcari['provinsi']; ?>" readonly />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
+                                    <label>Kode Pos</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Kode Pos" name="kodepos"   value="<?php echo $dcari['kodepos']; ?>" readonly />
                                         </div>
@@ -73,6 +73,7 @@
                                     
 
                                     <div class="form-group">
+                                    <label>Telp</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Telepon" name="telepon"   value="<?php echo $dcari['telepon']; ?>" readonly />
                                         </div>
@@ -81,47 +82,55 @@
                                     <div class="col-sm-6">
                                     
                                     <div class="form-group">
+                                    <label>Fax</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Fax" name="fax"  value="<?php echo $dcari['fax']; ?>" readonly />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
+                                    <label>Email</label>
                                         <div class="form-line">
                                             <input type="email" class="form-control" placeholder="Email" name="email"   value="<?php echo $dcari['email']; ?>" readonly />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
+                                    <label>Website</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Website" name="website"  value="<?php echo $dcari['website']; ?>" readonly />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
+                                    <label>Kepala Sekolah</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Kepala Sekolah" name="kepalasekolah"   value="<?php echo $dcari['kepalasekolah']; ?>" readonly />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
+                                    <label>Status Sekolah</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Status Sekolah" name="statussekolah"   value="<?php echo $dcari['statussekolah']; ?>" readonly />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
+                                    <label>Standar Sekolah</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Standar Sekolah" name="standarsekolah"   value="<?php echo $dcari['standarsekolah']; ?>" readonly />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
+                                    <label>Latitude</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Latitude" id="lat" name="latitude" readonly  value="<?php echo $dcari['lat']; ?>" readonly />
                                         </div>
                                     </div>
 									<div class="form-group">
+                                    <label>Longitude</label>
                                         <div class="form-line">
                                             <input type="text" class="form-control" placeholder="Longitude" name="longitude" id="lng" readonly  value="<?php echo $dcari['lang']; ?>" readonly />
                                         </div>

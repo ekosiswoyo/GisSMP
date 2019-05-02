@@ -84,8 +84,7 @@ include 'config.php';
 					<div class="row">
 						<div class="col-md-3">
 							<div class="logo">
-								<!-- <a href="index-2.html"><img src="img/logo/logo.png" alt="Logo" /></a> -->
-								<h1>LOGO</h1>
+								<a href="index.php"><img src="img/logo/logo.png" alt="Logo" style="width:87px;height:39px;"/></a>
 							</div>
 						</div>
 						<div class="col-md-9">
